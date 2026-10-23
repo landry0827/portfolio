@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>作品集 · 高清在线查看器</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0e1116;--bg2:#151a21;--line:#232a33;--tx:#e6eaf0;--tx2:#8b97a6;--acc:#4c8dff}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font:14px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",Inter,sans-serif}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--acc);z-index:60;transition:width .1s}
+#side{position:fixed;top:0;left:0;width:288px;height:100vh;overflow-y:auto;background:var(--bg2);border-right:1px solid var(--line);padding:22px 0;z-index:40}
+#side::-webkit-scrollbar{width:6px}#side::-webkit-scrollbar-thumb{background:#2c3440;border-radius:3px}
+.brand{padding:0 22px 18px;border-bottom:1px solid var(--line);margin-bottom:14px}
+.brand b{display:block;font-size:15px;letter-spacing:.5px}
+.brand span{color:var(--tx2);font-size:12px}
+.grp{margin-bottom:6px}
+.grp-t{padding:12px 22px 6px;color:var(--tx2);font-size:11px;letter-spacing:1.5px;text-transform:uppercase}
+.nav-i{display:flex;gap:10px;align-items:baseline;padding:7px 22px;color:#c3cbd6;text-decoration:none;font-size:13px;border-left:2px solid transparent}
+.nav-i:hover{background:#1b222b;color:#fff}
+.nav-i.on{background:#1b2431;color:#fff;border-left-color:var(--acc)}
+.nav-i .n{color:var(--tx2);font-size:11px;min-width:18px;font-variant-numeric:tabular-nums}
+.nav-i.on .n{color:var(--acc)}
+#main{margin-left:288px;padding:36px 40px 120px}
+.pg{max-width:1560px;margin:0 auto 56px}
+.pg-h{display:flex;align-items:baseline;gap:14px;margin-bottom:14px}
+.pg-n{color:var(--tx2);font-size:12px;font-variant-numeric:tabular-nums}
+.pg-h h2{font-size:16px;font-weight:600;letter-spacing:.3px}
+.pg img{width:100%;max-width:1560px;margin:0 auto;display:block;border-radius:6px;background:#fff;box-shadow:0 4px 24px rgba(0,0,0,.45);cursor:zoom-in}
+#lb{position:fixed;inset:0;background:rgba(6,8,11,.94);z-index:90;display:none;overflow:auto;cursor:zoom-out}
+#lb.on{display:block}
+#lb img{display:block;margin:24px auto;max-width:96vw;background:#fff}
+#top{position:fixed;right:26px;bottom:26px;width:42px;height:42px;border-radius:50%;background:var(--acc);color:#fff;border:0;font-size:18px;cursor:pointer;display:none;z-index:50;box-shadow:0 4px 14px rgba(0,0,0,.4)}
+#mb{position:fixed;top:12px;left:12px;width:40px;height:40px;border-radius:8px;background:var(--bg2);border:1px solid var(--line);color:var(--tx);font-size:18px;display:none;z-index:70;cursor:pointer}
+@media (max-width:1080px){
+ #mb{display:block}
+ #side{transform:translateX(-100%);transition:transform .25s}
+ #side.on{transform:none}
+ #main{margin-left:0;padding:60px 14px 90px}
+}
+@media print{
+ #side,#bar,#top,#mb{display:none!important}
+ #main{margin:0;padding:0}
+ .pg{page-break-inside:avoid;margin:0 0 10px}
+ .pg-h{display:none}
+ .pg img{box-shadow:none;max-width:100%}
+}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<button id="mb">&#9776;</button>
+<nav id="side"><div class="brand"><b>作品集 · 高清查看器</b><span>共 37 页 · 2x 原图导出</span></div><div class="grp"><div class="grp-t">开篇</div>
+<a class="nav-i" href="#p01" data-t="p01"><span class="n">01</span><span>封面</span></a>
+<a class="nav-i" href="#p02" data-t="p02"><span class="n">02</span><span>关于我</span></a>
+<a class="nav-i" href="#p03" data-t="p03"><span class="n">03</span><span>目录</span></a>
+</div>
+<div class="grp"><div class="grp-t">研究洞察</div>
+<a class="nav-i" href="#p04" data-t="p04"><span class="n">04</span><span>章节扉页</span></a>
+<a class="nav-i" href="#p05" data-t="p05"><span class="n">05</span><span>背景与目标</span></a>
+<a class="nav-i" href="#p06" data-t="p06"><span class="n">06</span><span>用户研究</span></a>
+<a class="nav-i" href="#p07" data-t="p07"><span class="n">07</span><span>研究方法</span></a>
+<a class="nav-i" href="#p08" data-t="p08"><span class="n">08</span><span>痛点与机会点</span></a>
+<a class="nav-i" href="#p09" data-t="p09"><span class="n">09</span><span>信息架构</span></a>
+<a class="nav-i" href="#p10" data-t="p10"><span class="n">10</span><span>PC 数据洞察</span></a>
+</div>
+<div class="grp"><div class="grp-t">设计系统</div>
+<a class="nav-i" href="#p11" data-t="p11"><span class="n">11</span><span>色彩与字体</span></a>
+<a class="nav-i" href="#p12" data-t="p12"><span class="n">12</span><span>栅格与组件</span></a>
+<a class="nav-i" href="#p13" data-t="p13"><span class="n">13</span><span>PC 栅格规范</span></a>
+<a class="nav-i" href="#p14" data-t="p14"><span class="n">14</span><span>PC 组件展示</span></a>
+<a class="nav-i" href="#p15" data-t="p15"><span class="n">15</span><span>平台规范</span></a>
+<a class="nav-i" href="#p16" data-t="p16"><span class="n">16</span><span>动效与微交互</span></a>
+</div>
+<div class="grp"><div class="grp-t">PC 界面</div>
+<a class="nav-i" href="#p17" data-t="p17"><span class="n">17</span><span>运营总览</span></a>
+<a class="nav-i" href="#p18" data-t="p18"><span class="n">18</span><span>工单列表</span></a>
+<a class="nav-i" href="#p19" data-t="p19"><span class="n">19</span><span>工单详情与审批</span></a>
+<a class="nav-i" href="#p20" data-t="p20"><span class="n">20</span><span>表单与配置</span></a>
+<a class="nav-i" href="#p21" data-t="p21"><span class="n">21</span><span>权限与角色</span></a>
+<a class="nav-i" href="#p22" data-t="p22"><span class="n">22</span><span>PC 页面展示</span></a>
+</div>
+<div class="grp"><div class="grp-t">大屏与多端</div>
+<a class="nav-i" href="#p23" data-t="p23"><span class="n">23</span><span>大屏与多端联动</span></a>
+<a class="nav-i" href="#p24" data-t="p24"><span class="n">24</span><span>上线结果与复盘</span></a>
+<a class="nav-i" href="#p25" data-t="p25"><span class="n">25</span><span>多端一致性</span></a>
+</div>
+<div class="grp"><div class="grp-t">项目二 · 官网</div>
+<a class="nav-i" href="#p26" data-t="p26"><span class="n">26</span><span>项目二 · 官网</span></a>
+</div>
+<div class="grp"><div class="grp-t">小程序</div>
+<a class="nav-i" href="#p27" data-t="p27"><span class="n">27</span><span>总览与任务分解</span></a>
+<a class="nav-i" href="#p28" data-t="p28"><span class="n">28</span><span>报修流程</span></a>
+<a class="nav-i" href="#p29" data-t="p29"><span class="n">29</span><span>进度与我的</span></a>
+<a class="nav-i" href="#p30" data-t="p30"><span class="n">30</span><span>小程序规范</span></a>
+<a class="nav-i" href="#p31" data-t="p31"><span class="n">31</span><span>小程序页面展示</span></a>
+<a class="nav-i" href="#p32" data-t="p32"><span class="n">32</span><span>移动端遵循</span></a>
+</div>
+<div class="grp"><div class="grp-t">AIGC</div>
+<a class="nav-i" href="#p33" data-t="p33"><span class="n">33</span><span>AIGC 扉页</span></a>
+<a class="nav-i" href="#p34" data-t="p34"><span class="n">34</span><span>生产工作流</span></a>
+<a class="nav-i" href="#p35" data-t="p35"><span class="n">35</span><span>作品展示 01</span></a>
+<a class="nav-i" href="#p36" data-t="p36"><span class="n">36</span><span>作品展示 02</span></a>
+</div>
+<div class="grp"><div class="grp-t">结尾</div>
+<a class="nav-i" href="#p37" data-t="p37"><span class="n">37</span><span>联系</span></a>
+</div></nav>
+<main id="main"><section id="p01" class="pg" data-i="1"><div class="pg-h"><span class="pg-n">01 / 37</span><h2>S00 封面</h2></div><img src="pages/p01.234de105.webp" alt="S00 封面" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p02" class="pg" data-i="2"><div class="pg-h"><span class="pg-n">02 / 37</span><h2>S01 关于我</h2></div><img src="pages/p02.5a67a582.webp" alt="S01 关于我" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p03" class="pg" data-i="3"><div class="pg-h"><span class="pg-n">03 / 37</span><h2>S02 目录</h2></div><img src="pages/p03.80c63d22.webp" alt="S02 目录" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p04" class="pg" data-i="4"><div class="pg-h"><span class="pg-n">04 / 37</span><h2>S03 01章扉页</h2></div><img src="pages/p04.702c7bb6.webp" alt="S03 01章扉页" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p05" class="pg" data-i="5"><div class="pg-h"><span class="pg-n">05 / 37</span><h2>S04 项目背景与目标</h2></div><img src="pages/p05.85a928c2.webp" alt="S04 项目背景与目标" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p06" class="pg" data-i="6"><div class="pg-h"><span class="pg-n">06 / 37</span><h2>S05 用户研究</h2></div><img src="pages/p06.ad76628e.webp" alt="S05 用户研究" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p07" class="pg" data-i="7"><div class="pg-h"><span class="pg-n">07 / 37</span><h2>S05b 研究方法与验证</h2></div><img src="pages/p07.74f73267.webp" alt="S05b 研究方法与验证" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p08" class="pg" data-i="8"><div class="pg-h"><span class="pg-n">08 / 37</span><h2>S06 痛点与机会点</h2></div><img src="pages/p08.ce0946a3.webp" alt="S06 痛点与机会点" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p09" class="pg" data-i="9"><div class="pg-h"><span class="pg-n">09 / 37</span><h2>S07 信息架构与路径</h2></div><img src="pages/p09.218d40b7.webp" alt="S07 信息架构与路径" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p10" class="pg" data-i="10"><div class="pg-h"><span class="pg-n">10 / 37</span><h2>S07b PC数据洞察</h2></div><img src="pages/p10.3e894c1e.webp" alt="S07b PC数据洞察" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p11" class="pg" data-i="11"><div class="pg-h"><span class="pg-n">11 / 37</span><h2>S08 设计系统-色彩字体</h2></div><img src="pages/p11.86229698.webp" alt="S08 设计系统-色彩字体" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p12" class="pg" data-i="12"><div class="pg-h"><span class="pg-n">12 / 37</span><h2>S09 设计系统-栅格组件</h2></div><img src="pages/p12.69c3fc90.webp" alt="S09 设计系统-栅格组件" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p13" class="pg" data-i="13"><div class="pg-h"><span class="pg-n">13 / 37</span><h2>S09b PC栅格规范</h2></div><img src="pages/p13.7b1d8d84.webp" alt="S09b PC栅格规范" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p14" class="pg" data-i="14"><div class="pg-h"><span class="pg-n">14 / 37</span><h2>S09c PC组件展示</h2></div><img src="pages/p14.926a4ae5.webp" alt="S09c PC组件展示" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p15" class="pg" data-i="15"><div class="pg-h"><span class="pg-n">15 / 37</span><h2>S09d 平台规范对照</h2></div><img src="pages/p15.bae9ebc0.webp" alt="S09d 平台规范对照" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p16" class="pg" data-i="16"><div class="pg-h"><span class="pg-n">16 / 37</span><h2>S09e 动效与微交互</h2></div><img src="pages/p16.08356904.webp" alt="S09e 动效与微交互" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p17" class="pg" data-i="17"><div class="pg-h"><span class="pg-n">17 / 37</span><h2>S10 PC界面01 运营总览</h2></div><img src="pages/p17.6e9de33d.webp" alt="S10 PC界面01 运营总览" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p18" class="pg" data-i="18"><div class="pg-h"><span class="pg-n">18 / 37</span><h2>S11 PC界面02 工单列表</h2></div><img src="pages/p18.9943b286.webp" alt="S11 PC界面02 工单列表" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p19" class="pg" data-i="19"><div class="pg-h"><span class="pg-n">19 / 37</span><h2>S12 PC界面03 工单详情与审批</h2></div><img src="pages/p19.c6f8a69e.webp" alt="S12 PC界面03 工单详情与审批" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p20" class="pg" data-i="20"><div class="pg-h"><span class="pg-n">20 / 37</span><h2>S13 PC界面04 表单与配置</h2></div><img src="pages/p20.523578c2.webp" alt="S13 PC界面04 表单与配置" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p21" class="pg" data-i="21"><div class="pg-h"><span class="pg-n">21 / 37</span><h2>S14 PC界面05 权限与角色</h2></div><img src="pages/p21.c17ba8e1.webp" alt="S14 PC界面05 权限与角色" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p22" class="pg" data-i="22"><div class="pg-h"><span class="pg-n">22 / 37</span><h2>S14b PC页面展示</h2></div><img src="pages/p22.b6c91cfc.webp" alt="S14b PC页面展示" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p23" class="pg" data-i="23"><div class="pg-h"><span class="pg-n">23 / 37</span><h2>S15 大屏与多端联动</h2></div><img src="pages/p23.e07264e5.webp" alt="S15 大屏与多端联动" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p24" class="pg" data-i="24"><div class="pg-h"><span class="pg-n">24 / 37</span><h2>S16 上线结果与复盘</h2></div><img src="pages/p24.c1d0dc1c.webp" alt="S16 上线结果与复盘" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p25" class="pg" data-i="25"><div class="pg-h"><span class="pg-n">25 / 37</span><h2>S17 多端一致性与规范落地</h2></div><img src="pages/p25.73de5672.webp" alt="S17 多端一致性与规范落地" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p26" class="pg" data-i="26"><div class="pg-h"><span class="pg-n">26 / 37</span><h2>P08 项目02 官网</h2></div><img src="pages/p26.299d21e1.webp" alt="P08 项目02 官网" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p27" class="pg" data-i="27"><div class="pg-h"><span class="pg-n">27 / 37</span><h2>SP1 小程序总览与任务分解</h2></div><img src="pages/p27.3ca70839.webp" alt="SP1 小程序总览与任务分解" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p28" class="pg" data-i="28"><div class="pg-h"><span class="pg-n">28 / 37</span><h2>SP2 小程序分解·报修流程</h2></div><img src="pages/p28.cbc829b0.webp" alt="SP2 小程序分解·报修流程" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p29" class="pg" data-i="29"><div class="pg-h"><span class="pg-n">29 / 37</span><h2>SP3 小程序分解·进度与我的</h2></div><img src="pages/p29.16383bf2.webp" alt="SP3 小程序分解·进度与我的" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p30" class="pg" data-i="30"><div class="pg-h"><span class="pg-n">30 / 37</span><h2>SP4 小程序设计规范</h2></div><img src="pages/p30.acce2414.webp" alt="SP4 小程序设计规范" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p31" class="pg" data-i="31"><div class="pg-h"><span class="pg-n">31 / 37</span><h2>SP5 小程序页面展示</h2></div><img src="pages/p31.f82ac4b0.webp" alt="SP5 小程序页面展示" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p32" class="pg" data-i="32"><div class="pg-h"><span class="pg-n">32 / 37</span><h2>SP6 移动端与平台遵循</h2></div><img src="pages/p32.271054cf.webp" alt="SP6 移动端与平台遵循" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p33" class="pg" data-i="33"><div class="pg-h"><span class="pg-n">33 / 37</span><h2>A1 AIGC章节扉页</h2></div><img src="pages/p33.a851a4c2.webp" alt="A1 AIGC章节扉页" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p34" class="pg" data-i="34"><div class="pg-h"><span class="pg-n">34 / 37</span><h2>A2 AIGC生产工作流</h2></div><img src="pages/p34.749d3adb.webp" alt="A2 AIGC生产工作流" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p35" class="pg" data-i="35"><div class="pg-h"><span class="pg-n">35 / 37</span><h2>A3 AIGC作品展示01</h2></div><img src="pages/p35.c69f8339.webp" alt="A3 AIGC作品展示01" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p36" class="pg" data-i="36"><div class="pg-h"><span class="pg-n">36 / 37</span><h2>A4 AIGC作品展示02</h2></div><img src="pages/p36.95c67637.webp" alt="A4 AIGC作品展示02" loading="lazy" onclick="openLb(this.src)"></section>
+<section id="p37" class="pg" data-i="37"><div class="pg-h"><span class="pg-n">37 / 37</span><h2>P10 末页 联系</h2></div><img src="pages/p37.962bf504.webp" alt="P10 末页 联系" loading="lazy" onclick="openLb(this.src)"></section></main>
+<button id="top" title="回到顶部">&#8593;</button>
+<div id="lb"><img id="lbi" src="" alt=""></div>
+<script>
+var bar=document.getElementById('bar'),top_=document.getElementById('top'),mb=document.getElementById('mb'),side=document.getElementById('side');
+addEventListener('scroll',function(){var h=document.documentElement;var p=h.scrollTop/(h.scrollHeight-h.clientHeight||1);bar.style.width=(p*100)+'%';top_.style.display=h.scrollTop>800?'block':'none';});
+top_.onclick=function(){scrollTo({top:0,behavior:'smooth'})};
+mb.onclick=function(){side.classList.toggle('on')};
+side.addEventListener('click',function(e){if(e.target.closest('a'))side.classList.remove('on')});
+var lb=document.getElementById('lb'),lbi=document.getElementById('lbi');
+function openLb(s){lbi.src=s;lb.classList.add('on')}
+lb.onclick=function(){lb.classList.remove('on')};
+addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on')});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){document.querySelectorAll('.nav-i').forEach(function(a){a.classList.remove('on')});var a=document.querySelector('.nav-i[data-t="'+e.target.id+'"]');if(a){a.classList.add('on');var r=a.getBoundingClientRect();if(r.top<60||r.bottom>innerHeight-40)a.scrollIntoView({block:'center'});}}})},{rootMargin:'-10% 0px -70% 0px'});
+document.querySelectorAll('.pg').forEach(function(s){io.observe(s)});
+</script>
+</body>
+</html>
